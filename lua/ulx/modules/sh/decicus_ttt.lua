@@ -114,9 +114,11 @@ function ulx.afkme( calling_ply, should_unafk )
 	if not should_unafk then
 		calling_ply:ConCommand("ttt_spectate")
 		ulx.logString( calling_ply:Nick() .. " forced themself to spectator." )
+		ULib.tsay( calling_ply, "You're now set to spectator mode." )
 	else
 		calling_ply:ConCommand("ttt_spectate 0")
 		ulx.logString( calling_ply:Nick() .. " forced themself out of spectator." )
+		ULib.tsay( calling_ply, "You're now out of spectator mode." )
 	end
 end
 local afkme = ulx.command( CATEGORY_NAME, "ulx afkme", ulx.afkme, "!afkme" )
