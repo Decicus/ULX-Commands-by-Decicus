@@ -110,6 +110,7 @@ end
 hook.Add("TTTEndRound", "DamageLogPrintHelper", DamageLogPrintHelper)
 --[End]------------------------------------------------------------------------------
 
+--[Start - AFKMe]--------------------------------------------------------------------
 function ulx.afkme( calling_ply, should_unafk )
 	if not should_unafk then
 		calling_ply:ConCommand("ttt_spectate")
@@ -126,3 +127,42 @@ afkme:addParam{ type=ULib.cmds.BoolArg, invisible=true }
 afkme:defaultAccess( ULib.ACCESS_ALL )
 afkme:help( "Forces yourself to spectator" )
 afkme:setOpposite( "ulx unafkme", {_, true}, "!unafkme" )
+--[End - AFKMe]----------------------------------------------------------------------
+
+--[Start - Damagelog]----------------------------------------------------------------
+function ulx.damagelog ( calling_ply )
+	--Everything below is pretty much taken from admin.lua of TTT.
+	local pr = GetPrintFn( calling_ply )
+	ServerLog(Format("%s printed the damagelog, using 'ulx damagelog'\n", IsValid( calling_ply ) and calling_ply:Nick() or "console"))
+    pr("*** Damage log:\n")
+
+    for k, txt in ipairs(GAMEMODE.DamageLog) do
+		pr(txt)
+    end
+
+	pr("*** Damage log end.")
+end
+local damagelog = ulx.command( CATEGORY_NAME, "ulx damagelog", ulx.damagelog, "!damagelog" )
+damagelog:defaultAccess( ULib.ACCESS_SUPERADMIN )
+damagelog:help( "Prints the damagelog to the console." )
+
+function GetPrintFn( ply )
+   if IsValid( ply ) then
+      return function(...)
+                local t = ""
+                for _, a in ipairs({...}) do
+                   t = t .. "\t" .. a
+                end
+                ply:PrintMessage(HUD_PRINTCONSOLE, t)
+             end
+   else
+      return print
+   end
+end
+--[[
+	Developer notes:
+	95% of this code is taken from admin.lua in TTT.
+	I only did a few modifications to it, so it works as a ULX command.
+	I (Decicus) only take credit for the very, very few additions/changes to this.
+--]]
+--[End - Damagelog]------------------------------------------------------------------

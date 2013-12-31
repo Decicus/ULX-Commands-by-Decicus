@@ -20,7 +20,7 @@ reloadmap:defaultAccess( ULib.ACCESS_ADMIN )
 reloadmap:help( "Reloads the map you're currently on." )
 
 --Credit to Markusmoo.
---This silent kick doesn't only run the command silently, it prints to admins-only without giving them permission to see silent echos.
+--This silent kick doesn't only run the command silently.
 --This is technically the standard "ULX Kick" command, I don't take credit for anything else other than adding a silent function to it, but also the "print to admins" part.
 function ulx.skick( calling_ply, target_ply, reason )
 	if reason and reason ~= "" then
