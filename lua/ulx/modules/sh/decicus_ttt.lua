@@ -44,7 +44,7 @@ function SlapNRHelper ()
 		local slap_dmg = tonumber(v:GetPData("slapnr_dmg")) or 0 --Shortcut again!
 		if v:Alive() and slap_dmg > 0 then --Checks if alive and that the damage is more than 0.
 			ULib.slap(v, slap_dmg) --Utilises ULib.slap to actually take care of the slapping.
-			v:ChatPrint("You got slapped for " .. slap_dmg .. " damage this round.") --Print to the target's chat that they got slapped.
+			ULib.tsayColor( nil, Color( 255, 0, 0 ), v:Nick(), Color( 255, 255, 255 ), " got slapped for " .. tostring( slap_dmg ) .. " damage." )
 			v:RemovePData("slapnr_dmg") --Remove the slap damage, or else it will repeat itself every round.
 		end
 	end
@@ -54,10 +54,10 @@ hook.Add("TTTBeginRound", "SlapNRHelper", SlapNRHelper) --Slap happens when the 
 function InformSlapNR (ply)
 	local slap_dmg = tonumber(ply:GetPData("slapnr_dmg")) or 0 --Do I need to write 'shortcut' on all of these?
 	if ply:Alive() and slap_dmg > 0 then --Again checks if the player is alive and then checks if their "slap_dmg" is more than 0.
-		ply:ChatPrint("You will be slapped for ".. tostring(slap_dmg) .." damage this round.") --Prints to their chat how much damage.
+		ULib.tsayColor( nil, Color( 255, 0, 0 ), ply:Nick(), Color( 255, 255, 255 ), " is being slapped for " .. tostring(slap_dmg) .. " damage." )
 	end
 end
-hook.Add("PlayerSpawn", "InformSlapNR", InformSlapNR) --Informs them when they spawn in.
+hook.Add("PlayerSpawn", "InformSlapNR", InformSlapNR) --Informs everyone when they spawn in.
 --[End]------------------------------------------------------------------------------
 
 --Slaynr leave notifier
