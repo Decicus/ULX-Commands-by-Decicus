@@ -113,11 +113,11 @@ hook.Add("TTTEndRound", "DamageLogPrintHelper", DamageLogPrintHelper)
 --[Start - AFKMe]--------------------------------------------------------------------
 function ulx.afkme( calling_ply, should_unafk )
 	if not should_unafk then
-		calling_ply:ConCommand("ttt_spectate")
+		calling_ply:ConCommand("ttt_spectator_mode 1")
 		ulx.logString( calling_ply:Nick() .. " forced themself to spectator." )
 		ULib.tsay( calling_ply, "You're now set to spectator mode." )
 	else
-		calling_ply:ConCommand("ttt_spectate 0")
+		calling_ply:ConCommand("ttt_spectator_mode 0")
 		ulx.logString( calling_ply:Nick() .. " forced themself out of spectator." )
 		ULib.tsay( calling_ply, "You're now out of spectator mode." )
 	end
