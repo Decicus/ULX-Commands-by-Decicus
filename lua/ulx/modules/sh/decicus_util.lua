@@ -31,7 +31,7 @@ function ulx.skick( calling_ply, target_ply, reason )
 	end
 	ULib.kick( target_ply, reason, calling_ply ) --This obviously kicks the player.
 end
-local skick = ulx.command( CATEGORY_NAME, "ulx skick", ulx.skick, "!skick" )
+local skick = ulx.command( CATEGORY_NAME, "ulx skick", ulx.skick, "!skick", true )
 skick:addParam{ type=ULib.cmds.PlayerArg }
 skick:addParam{ type=ULib.cmds.StringArg, hint="reason", ULib.cmds.optional, ULib.cmds.takeRestOfLine, completes=ulx.common_kick_reasons }
 skick:defaultAccess( ULib.ACCESS_ADMIN )
