@@ -185,8 +185,10 @@ function GetPrintFn( ply )
    
 end
 --[[
+
 	Developer notes:
 	95% of this code is taken from admin.lua in TTT.
 	I only did a few modifications to it, so it works as a ULX command.
 	I (Decicus) only take credit for the very, very few additions/changes to this.
+
 --]]
