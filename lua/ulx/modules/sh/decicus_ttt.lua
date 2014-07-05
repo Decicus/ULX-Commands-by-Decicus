@@ -192,3 +192,25 @@ end
 	I (Decicus) only take credit for the very, very few additions/changes to this.
 
 --]]
+
+-- Code below is for "ULX SlayNR" notifications.
+function SlayNRDisconnect( ply )
+
+	local slays = tonumber( ply:GetPData( "slaynr_slays" ) ) or 0
+	
+	if slays > 0 then
+	
+		for _, p in ipairs( player.GetAll() ) do
+	
+			if p:IsAdmin() then
+						
+				ULib.tsayColor( p, true, Color( 255, 255, 255 ), "The player ", Color( 255, 0, 0 ), ply:Nick(), Color( 255, 255, 255 ), " (", ply:SteamID(), ") left the server with ", Color( 255, 0, 0 ), tostring( slays ), Color( 255, 255, 255 ), " slay(s) left." )
+			
+			end
+	
+		end
+		
+	end
+	
+end
+hook.Add( "PlayerDisconnected", "SlayNRDisconnect", SlayNRDisconnect )
