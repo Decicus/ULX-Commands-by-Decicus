@@ -11,7 +11,7 @@ function ulx.fmotd( calling_ply, target_ply )
 	ulx.fancyLogAdmin( calling_ply, "#A force-opened the MOTD for #T.", target_ply )
 	
 end
-local fmotd = ulx.command( CATEGORY_NAME, "ulx fmotd", ulx.fmotd, "ulx fmotd" )
+local fmotd = ulx.command( CATEGORY_NAME, "ulx fmotd", ulx.fmotd, "!fmotd" )
 fmotd:addParam{ type=ULib.cmds.PlayerArg }
 fmotd:defaultAccess( ULib.ACCESS_ADMIN )
 fmotd:help( "Opens the MOTD for the targeted player." )

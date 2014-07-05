@@ -79,13 +79,13 @@ function ulx.toggledamagelog( calling_ply )
 	
 	if logEnabled == 0 then
 	
-		calling_ply:SetPData( "ulx_toggle_damagelog", 1 )
+		calling_ply:SetPData( "ulx_toggledamagelog", 1 )
 		ULib.tsayColor( calling_ply, Color( 0, 255, 0 ), "ToggleDamagelog: You have enabled your automatic damagelog." )
 		ulx.logString( "Toggle Damagelog: " .. calling_ply:Nick() .. "(" .. calling_ply:SteamID() .. ") has enabled their automatic damagelog.", true )
 		
 	else
 	
-		calling_ply:SetPData( "ulx_toggle_damagelog", 0 )
+		calling_ply:SetPData( "ulx_toggledamagelog", 0 )
 		ULib.tsayColor( calling_ply, Color( 255, 0, 0 ), "ToggleDamagelog: You have disabled your automatic damagelog." )
 		ulx.logString( "Toggle Damagelog: " .. calling_ply:Nick() .. "(" .. calling_ply:SteamID() .. ") has disabled their automatic damagelog.", true )
 		
@@ -100,7 +100,7 @@ function ToggleDamagelogPrint()
 
 	for _, ply in ipairs( player.GetAll() ) do
 	
-		local logEnabled = tonumber( ply:GetPData( "ulx_toggle_damagelog" ) ) or 0
+		local logEnabled = tonumber( ply:GetPData( "ulx_toggledamagelog" ) ) or 0
 		
 		if logEnabled ~= 0 then
 		
