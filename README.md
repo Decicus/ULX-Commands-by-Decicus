@@ -6,4 +6,8 @@ I do not recommend using the developer code unless it's already been tested and 
   
 Requirements
 =======================
-ULib and ULX: (http://ulyssesmod.net/)[http://ulyssesmod.net/]
+ULib and ULX: [http://ulyssesmod.net/](http://ulyssesmod.net/)  
+  
+License
+=======================
+Read the license file.
