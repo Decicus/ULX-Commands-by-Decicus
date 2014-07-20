@@ -20,7 +20,8 @@ function ulx.reloadmap( calling_ply )
 
 	local map = game.GetMap()
 	
-	ULib.tsay( nil, calling_ply:Nick() .. " reloaded the map." )
+	ULib.tsay( nil, IsValid( calling_ply ) and calling_ply:Nick() or "Console" .. " reloaded the map." )
+	ulx.fancyLogAdmin( calling_ply, "#A reloaded the map." )
 	
 	timer.Simple( 1.5, function()
 	
