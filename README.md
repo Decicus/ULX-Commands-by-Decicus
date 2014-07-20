@@ -10,4 +10,5 @@ ULib and ULX: [http://ulyssesmod.net/](http://ulyssesmod.net/)
   
 License
 =======================
-Read the license file.
+Read the license file.  
+TL;DR: Do whatever you want with it, I honestly don't care.
