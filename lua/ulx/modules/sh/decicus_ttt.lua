@@ -52,6 +52,7 @@ function NotifyPlayerSlap( ply )
 
 end
 hook.Add( "PlayerInitialSpawn", "NotifyPlayerSlap", NotifyPlayerSlap )
+hook.Add( "PlayerSpawn", "NotifyPlayerSlapOnSpawn", NotifyPlayerSlap )
 
 function SlapPlayers()
 
