@@ -1,8 +1,8 @@
 "AddonInfo"
 {
 	"name"				"ULX Commands by Decicus"
-	"version"			"2.0"
-	"up_date"			"07/06/2014"
+	"version"			"2.1"
+	"up_date"			"07/21/2014"
 	"author_name"			"Decicus"
 	"author_email"			"decicus@gmail.com"
 	"author_url"			"http://decicus.com"
