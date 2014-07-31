@@ -25,9 +25,9 @@ function ulx.slapnr( calling_ply, target_ply, damage )
 			
 		end
 		
-		ulx.fancyLogAdmin( calling_ply, message, target_ply )
-		
 	end
+	
+	ulx.fancyLogAdmin( calling_ply, message, target_ply )
 		
 end
 local slapnr = ulx.command( CATEGORY_NAME, "ulx slapnr", ulx.slapnr, "!slapnr" )
