@@ -66,4 +66,4 @@ end
 local steamid = ulx.command( CATEGORY_NAME, "ulx steamid", ulx.steamid, { "!steamid", "!sid" }, true )
 steamid:addParam{ type=ULib.cmds.PlayerArg }
 steamid:defaultAccess( ULib.ACCESS_ALL )
-steamid:help( "Copies the Steam ID of a target." )
+steamid:help( "Copies the Steam ID of a player." )
