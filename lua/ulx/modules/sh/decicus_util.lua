@@ -54,3 +54,16 @@ skick:addParam{ type=ULib.cmds.PlayerArg }
 skick:addParam{ type=ULib.cmds.StringArg, hint="Reason", ULib.cmds.optional, ULib.cmds.takeRestOfLine, completes=ulx.common_kick_reasons }
 skick:defaultAccess( ULib.ACCESS_ADMIN )
 skick:help( "Silently kicks the player." )
+
+-- Command inspired by Cobalt's "ulx ip" command.
+function ulx.steamid( calling_ply, target_ply )
+
+	calling_ply:SendLua( "SetClipboardText( \"" .. target_ply:SteamID() .. "\" )" )
+	
+	ulx.fancyLog( {calling_ply}, "Copied the Steam ID of #T.", target_ply )
+	
+end
+local steamid = ulx.command( CATEGORY_NAME, "ulx steamid", ulx.steamid, { "!steamid", "!sid" }, true )
+steamid:addParam{ type=ULib.cmds.PlayerArg }
+steamid:defaultAccess( ULib.ACCESS_ALL )
+steamid:help( "Copies the Steam ID of a target." )

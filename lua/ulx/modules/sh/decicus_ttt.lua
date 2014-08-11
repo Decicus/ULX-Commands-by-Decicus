@@ -137,7 +137,7 @@ afkme:defaultAccess( ULib.ACCESS_ALL )
 afkme:help( "Puts your into spectator. Use 'ulx unafkme' (console) or '!afkme' (chat) if you want to get out of spectator. " )
 afkme:setOpposite( "ulx unafkme", { _, true }, "!unafkme" )
 
-function ulx.damagelog ( calling_ply )
+function ulx.damagelog( calling_ply )
 	
 	-- I haven't done anything here except for small modifications so it actually works.
 	-- Original code taken from admin.lua inside Trouble in Terrorist Town's gamemode folder.
