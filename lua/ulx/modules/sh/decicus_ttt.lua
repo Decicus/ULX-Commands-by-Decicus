@@ -25,9 +25,9 @@ function ulx.slapnr( calling_ply, target_ply, damage )
 			
 		end
 		
-		ulx.fancyLogAdmin( calling_ply, message, target_ply )
-		
 	end
+	
+	ulx.fancyLogAdmin( calling_ply, message, target_ply )
 		
 end
 local slapnr = ulx.command( CATEGORY_NAME, "ulx slapnr", ulx.slapnr, "!slapnr" )
@@ -137,7 +137,7 @@ afkme:defaultAccess( ULib.ACCESS_ALL )
 afkme:help( "Puts your into spectator. Use 'ulx unafkme' (console) or '!afkme' (chat) if you want to get out of spectator. " )
 afkme:setOpposite( "ulx unafkme", { _, true }, "!unafkme" )
 
-function ulx.damagelog ( calling_ply )
+function ulx.damagelog( calling_ply )
 	
 	-- I haven't done anything here except for small modifications so it actually works.
 	-- Original code taken from admin.lua inside Trouble in Terrorist Town's gamemode folder.
