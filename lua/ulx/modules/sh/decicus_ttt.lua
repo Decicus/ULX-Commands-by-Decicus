@@ -76,7 +76,7 @@ hook.Add( "TTTBeginRound", "SlapPlayers", SlapPlayers )
 
 function ulx.toggledamagelog( calling_ply )
 
-	local logEnabled = tonumber( calling_ply:GetPData( "ulx_toggle_damagelog" ) ) or 0
+	local logEnabled = tonumber( calling_ply:GetPData( "ulx_toggledamagelog" ) ) or 0
 	
 	if logEnabled == 0 then
 	
