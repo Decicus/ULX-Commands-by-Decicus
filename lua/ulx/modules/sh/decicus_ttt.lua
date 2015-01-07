@@ -137,6 +137,24 @@ afkme:defaultAccess( ULib.ACCESS_ALL )
 afkme:help( "Puts your into spectator. Use 'ulx unafkme' (console) or '!afkme' (chat) if you want to get out of spectator. " )
 afkme:setOpposite( "ulx unafkme", { _, true }, "!unafkme" )
 
+function ulx.kickspecs( calling_ply )
+
+    for _, ply in ipairs( player.GetAll() ) do
+    
+        if ply:Team() == TEAM_SPECTATOR then
+        
+            ply:Kick( "Kicked for being a spectator." )
+            
+        end
+        
+    end
+    ulx.fancyLogAdmin( calling_ply, "#A kicked all spectators." )
+
+end
+local kickspecs = ulx.command( CATEGORY_NAME, "ulx kickspecs", ulx.kickspecs, "!kickspecs" )
+kickspecs:defaultAccess( ULib.ACCESS_ADMIN )
+kickspecs:help( "Kicks everyone that's currently in the \"spectator\" team." )
+
 function ulx.damagelog( calling_ply )
 	
 	-- I haven't done anything here except for small modifications so it actually works.
